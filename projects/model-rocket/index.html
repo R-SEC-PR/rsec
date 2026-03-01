@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>モデルロケット | R-SEC 東京理科大学 宇宙工学サークル</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">⚙</span>
+        <span class="logo-text">R-SEC</span>
+        <span class="logo-sub">東京理科大学 宇宙工学サークル</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">モデルロケットとは</a></li>
+        <li><a href="#structure">機体構造</a></li>
+        <li><a href="#flight">飛行シーケンス</a></li>
+        <li><a href="#contest">種コン</a></li>
+        <li><a href="#join" class="nav-cta">参加する</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="hero_bg.jpg" alt="モデルロケット打ち上げ" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        MODEL ROCKET PROJECT
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line1">自分の手で</span>
+        <span class="title-line2">宇宙へ届ける</span>
+        <span class="title-line3">ロケットを作れ。</span>
+      </h1>
+      <p class="hero-desc">
+        東京理科大学 宇宙工学サークル R-SEC では、<br />
+        火薬エンジンで飛ぶ本格的なモデルロケットを<br />
+        設計・製作・打ち上げています。
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">600<span class="stat-unit">m</span></span>
+          <span class="stat-label">最高到達高度</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">100<span class="stat-unit">+</span></span>
+          <span class="stat-label">全国参加チーム数</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">2005<span class="stat-unit">年〜</span></span>
+          <span class="stat-label">種コン開催年</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#about" class="btn-primary">詳しく見る</a>
+        <a href="#contest" class="btn-secondary">種コンとは？</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT IS MODEL ROCKET ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">WHAT IS</span>
+        <h2 class="section-title">モデルロケットとは</h2>
+        <p class="section-subtitle">本物のロケットと同じ原理で飛ぶ、学生が自作できる火薬推進ロケット</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="about-lead">
+            <p>
+              モデルロケットとは、<strong>火薬カートリッジ（エンジン）</strong>を動力として打ち上げる小型ロケットです。
+              本物の宇宙ロケットと全く同じ<strong>作用・反作用の原理</strong>で飛翔し、
+              頂点付近でパラシュートを展開して安全に回収されます。
+            </p>
+            <p>
+              市販のキットから始めることも、ゼロから設計・製作することも可能です。
+              R-SECでは、<strong>空力設計・構造設計・回収システム設計</strong>まで
+              すべて自分たちの手で行い、種子島宇宙コンテストへの出場を目指します。
+            </p>
+          </div>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">🔬</div>
+              <div class="feature-body">
+                <h4>本格的な工学体験</h4>
+                <p>空力学・材料力学・制御工学など、大学で学ぶ知識を実際のロケット製作に応用できます。</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-body">
+                <h4>ライセンス制度で安全に</h4>
+                <p>日本モデルロケット協会（JAR）の第4級ライセンスを取得することで、合法・安全に打ち上げができます。講習は1日で取得可能です。</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🏆</div>
+              <div class="feature-body">
+                <h4>全国大会で腕を競う</h4>
+                <p>毎年3月にJAXA種子島宇宙センターで開催される「種子島ロケットコンテスト」に出場し、全国の学生チームと競います。</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">👥</div>
+              <div class="feature-body">
+                <h4>チームで挑む達成感</h4>
+                <p>設計・製作・打ち上げ・データ解析まで、チーム全員で協力して一つのミッションを完遂する経験は他では得られません。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="diagram-card">
+            <img src="rocket_diagram.png" alt="モデルロケット構造図" class="diagram-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STRUCTURE ===== -->
+  <section class="section section-dark" id="structure">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">STRUCTURE</span>
+        <h2 class="section-title">機体の構造</h2>
+        <p class="section-subtitle">モデルロケットは5つの主要部品で構成されています</p>
+      </div>
+
+      <div class="structure-grid">
+        <div class="part-card" data-num="01">
+          <div class="part-icon">▲</div>
+          <h3 class="part-name">ノーズコーン</h3>
+          <p class="part-desc">
+            機体先端の円錐形パーツ。空気抵抗を最小化するための形状設計が重要で、
+            オジーブ型・コニカル型など様々な形状があります。
+            内部にパラシュートを格納することもあります。
+          </p>
+          <div class="part-tag">空力設計</div>
+        </div>
+
+        <div class="part-card" data-num="02">
+          <div class="part-icon">⬜</div>
+          <h3 class="part-name">ボディチューブ</h3>
+          <p class="part-desc">
+            機体の主要胴体部分。紙・プラスチック・カーボン繊維など様々な材料で製作します。
+            パラシュートや電子機器を格納するスペースとなります。
+          </p>
+          <div class="part-tag">構造設計</div>
+        </div>
+
+        <div class="part-card" data-num="03">
+          <div class="part-icon">🪂</div>
+          <h3 class="part-name">パラシュート</h3>
+          <p class="part-desc">
+            頂点付近でエジェクションチャージにより展開される回収装置。
+            降下速度を5m/s以下に抑えることが安全基準として定められています。
+            ストリーマ型も使用されます。
+          </p>
+          <div class="part-tag">回収システム</div>
+        </div>
+
+        <div class="part-card" data-num="04">
+          <div class="part-icon">◀</div>
+          <h3 class="part-name">フィン（安定翼）</h3>
+          <p class="part-desc">
+            機体後部に取り付けられた安定翼。飛行中の姿勢安定に不可欠で、
+            形状・サイズ・取り付け角度が飛行特性に大きく影響します。
+            バルサ材・アルミ・カーボン等で製作します。
+          </p>
+          <div class="part-tag">安定性設計</div>
+        </div>
+
+        <div class="part-card" data-num="05">
+          <div class="part-icon">🔥</div>
+          <h3 class="part-name">エンジン</h3>
+          <p class="part-desc">
+            ESTES社製などの市販火薬カートリッジ。A〜C型（第4級ライセンス対応）があり、
+            推力・燃焼時間が異なります。C型は最大推力約14N、燃焼時間約1.9秒です。
+          </p>
+          <div class="part-tag">推進システム</div>
+        </div>
+
+        <div class="part-card part-card-wide" data-num="＋">
+          <div class="part-icon">📡</div>
+          <h3 class="part-name">電子ペイロード（上級）</h3>
+          <p class="part-desc">
+            高度計・加速度センサー・GPS・カメラ・ビーコン送信機などを搭載することで、
+            飛行データの取得や位置追跡が可能になります。
+            インテリジェントロケット競技では、これらを駆使した高度なミッションに挑戦します。
+          </p>
+          <div class="part-tag">電子・制御</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FLIGHT SEQUENCE ===== -->
+  <section class="section" id="flight">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FLIGHT SEQUENCE</span>
+        <h2 class="section-title">飛行シーケンス</h2>
+        <p class="section-subtitle">打ち上げから回収まで、6つのフェーズで完結する飛行ミッション</p>
+      </div>
+
+      <div class="sequence-img-wrap">
+        <img src="flight_sequence.png" alt="モデルロケット飛行シーケンス" class="sequence-img" />
+      </div>
+
+      <div class="sequence-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h4>点火 <span class="step-en">Ignition</span></h4>
+            <p>電気点火装置でエンジンに点火。カウントダウン後、推力が機体重量を超えた瞬間に離陸します。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h4>動力飛行 <span class="step-en">Powered Flight</span></h4>
+            <p>エンジン燃焼中（約1〜3秒）は急激に加速。フィンが姿勢を安定させ、垂直に上昇します。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h4>慣性飛行 <span class="step-en">Coasting</span></h4>
+            <p>エンジン燃焼終了後も慣性で上昇を続けます。この間に遅延薬が燃焼し、頂点到達を待ちます。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h4>エジェクション <span class="step-en">Ejection</span></h4>
+            <p>頂点付近でエジェクションチャージが発火し、ノーズコーンを押し出してパラシュートを展開します。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <div class="step-body">
+            <h4>減速降下 <span class="step-en">Descent</span></h4>
+            <p>パラシュートの空気抵抗により、安全な速度（5m/s以下）でゆっくりと降下します。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">06</div>
+          <div class="step-body">
+            <h4>回収 <span class="step-en">Recovery</span></h4>
+            <p>着地後、機体を回収してデータを解析。次の打ち上げに向けた改良サイクルが始まります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LICENSE ===== -->
+  <section class="section section-accent" id="license">
+    <div class="container">
+      <div class="license-wrap">
+        <div class="license-text">
+          <span class="section-label">LICENSE</span>
+          <h2 class="section-title">ライセンス制度</h2>
+          <p>
+            日本でモデルロケットを打ち上げるには、<strong>日本モデルロケット協会（JAR）</strong>の
+            従事者資格（ライセンス）が必要です。
+            R-SECでは入会後にライセンス取得をサポートします。
+          </p>
+          <div class="license-table-wrap">
+            <table class="license-table">
+              <thead>
+                <tr>
+                  <th>ライセンス</th>
+                  <th>扱えるエンジン</th>
+                  <th>取得方法</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>第4級</strong><span class="badge-new">入門</span></td>
+                  <td>A〜C型（10Ns以下）</td>
+                  <td>1日講習（座学＋製作＋打ち上げ実習）</td>
+                </tr>
+                <tr>
+                  <td><strong>第3級</strong></td>
+                  <td>A〜G型（160Ns以下）</td>
+                  <td>筆記試験（80点以上）</td>
+                </tr>
+                <tr>
+                  <td><strong>指導講師</strong></td>
+                  <td>A〜G型（160Ns以下）</td>
+                  <td>指導講師養成講習会＋考査</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="license-note">
+            ※ 第4級ライセンスは小学生から取得可能。年齢制限なし。
+            R-SECでは入会後、先輩と一緒に講習会に参加できます。
+          </p>
+        </div>
+        <div class="license-visual">
+          <div class="license-card">
+            <div class="lc-header">
+              <span class="lc-icon">📋</span>
+              <span class="lc-title">第4級 取得の流れ</span>
+            </div>
+            <div class="lc-steps">
+              <div class="lc-step">
+                <span class="lc-step-num">1</span>
+                <div>
+                  <strong>座学（約1.5時間）</strong>
+                  <p>ロケット工学の基礎・安全規則・ライセンス制度</p>
+                </div>
+              </div>
+              <div class="lc-step">
+                <span class="lc-step-num">2</span>
+                <div>
+                  <strong>機体製作実習（約2時間）</strong>
+                  <p>キットを使って実際にロケットを組み立てる</p>
+                </div>
+              </div>
+              <div class="lc-step">
+                <span class="lc-step-num">3</span>
+                <div>
+                  <strong>打ち上げ実習（約1.5時間）</strong>
+                  <p>発射台へのセット・カウントダウン・打ち上げ・回収</p>
+                </div>
+              </div>
+              <div class="lc-step">
+                <span class="lc-step-num">4</span>
+                <div>
+                  <strong>従事者証授与</strong>
+                  <p>合格後、正式なライセンスが発行されます</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTEST ===== -->
+  <section class="section" id="contest">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">COMPETITION</span>
+        <h2 class="section-title">種子島ロケットコンテスト</h2>
+        <p class="section-subtitle">通称「種コン」— 日本最大の学生ロケット大会、JAXA種子島宇宙センターで開催</p>
+      </div>
+
+      <div class="contest-hero">
+        <img src="tanegashima_bg.jpg" alt="種子島宇宙センター" class="contest-hero-img" />
+        <div class="contest-hero-overlay">
+          <div class="contest-info-box">
+            <div class="cib-row">
+              <span class="cib-label">開催地</span>
+              <span class="cib-value">JAXA 種子島宇宙センター 竹崎グラウンド</span>
+            </div>
+            <div class="cib-row">
+              <span class="cib-label">開催時期</span>
+              <span class="cib-value">毎年3月（5日間）</span>
+            </div>
+            <div class="cib-row">
+              <span class="cib-label">参加資格</span>
+              <span class="cib-value">高校生・高専生・大学生・一般</span>
+            </div>
+            <div class="cib-row">
+              <span class="cib-label">参加費</span>
+              <span class="cib-value">学生 3,000円/人</span>
+            </div>
+            <div class="cib-row">
+              <span class="cib-label">参加チーム</span>
+              <span class="cib-value">全国から約100チーム</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contest-about">
+        <p>
+          種子島ロケットコンテスト（通称：種コン）は、<strong>2005年から毎年3月</strong>に
+          JAXA種子島宇宙センターで開催される、日本最大規模の学生ロケット競技大会です。
+          北海道から沖縄まで全国の学生・社会人チームが参加し、
+          <strong>ロケット部門4種目・CanSat部門3種目</strong>で技術を競います。
+          世界で最も宇宙に近い打ち上げ施設の一つで、自作のロケットを飛ばす体験は唯一無二です。
+        </p>
+      </div>
+
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-num">種目①</div>
+          <div class="event-badge rocket">ロケット部門</div>
+          <h3 class="event-name">滞空・定点回収</h3>
+          <p class="event-desc">
+            できるだけ長く空中に滞在しつつ、発射点のできるだけ近くに着陸することを競う。
+            滞空時間と着陸距離をポイントに換算して総合評価。
+          </p>
+          <div class="event-rule">
+            <span>使用エンジン：A〜C型（黒色火薬20g以下）</span>
+            <span>回収条件：射点から半径50m以内</span>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-num">種目②</div>
+          <div class="event-badge rocket">ロケット部門</div>
+          <h3 class="event-name">ペイロード有翼滞空</h3>
+          <p class="event-desc">
+            ペイロードに翼を取り付け、バックファイヤーによる放出から着地までの
+            滞空時間の長さを競う。グライダーやオートローテーション機構など自由な設計が可能。
+          </p>
+          <div class="event-rule">
+            <span>使用エンジン：C5-3 / C6-3 / C11-3 のいずれか1本</span>
+            <span>ペイロード重量：50g以上</span>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-num">種目③</div>
+          <div class="event-badge rocket">ロケット部門</div>
+          <h3 class="event-name">高度競技</h3>
+          <p class="event-desc">
+            搭載した高度計で計測した最高到達高度を競う。
+            いかに軽く・空気抵抗を小さくするかの設計力が問われる純粋な性能競技。
+          </p>
+          <div class="event-rule">
+            <span>使用エンジン：C5-3 を1本</span>
+            <span>上限高度：600m未満</span>
+          </div>
+        </div>
+
+        <div class="event-card event-card-highlight">
+          <div class="event-num">種目④</div>
+          <div class="event-badge rocket">ロケット部門</div>
+          <h3 class="event-name">インテリジェントロケット</h3>
+          <p class="event-desc">
+            自由なミッション設定で技術的チャレンジを競う上級競技。
+            カメラ搭載・センサーデータ取得・垂直着陸・制御飛行など、
+            アイデア次第で無限の可能性がある最も創造的な種目。
+          </p>
+          <div class="event-rule">
+            <span>使用エンジン：C5-3 または C11-3</span>
+            <span>ミッション内容・達成度・技術難度を総合評価</span>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-num">種目⑤⑥⑦</div>
+          <div class="event-badge cansat">CanSat部門</div>
+          <h3 class="event-name">CanSat競技</h3>
+          <p class="event-desc">
+            大型クレーン車から高度30m前後で投下される模擬人工衛星（CanSat）を使った競技。
+            自律制御カムバック・遠隔制御カムバック・オリジナルミッションの3種目があり、
+            制御工学・通信技術・ソフトウェア開発の総合力が試される。
+          </p>
+          <div class="event-rule">
+            <span>機体サイズ：直径146mm × 高さ300mm以内</span>
+            <span>機体重量：1050g以内</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contest-timeline">
+        <h3 class="timeline-title">大会スケジュール（例年）</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-month">7月</div>
+            <div class="tl-content">
+              <strong>参加申込受付開始</strong>
+              <p>チーム登録・設計計画書の準備開始</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-month">10月</div>
+            <div class="tl-content">
+              <strong>参加申込締切・書類選考</strong>
+              <p>設計計画書・試射動画を提出し、審査員による書類選考が行われる</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-month">11月</div>
+            <div class="tl-content">
+              <strong>合格チーム発表</strong>
+              <p>ロケット部門・CanSat部門それぞれ約51チームが選出される</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-month">3月</div>
+            <div class="tl-content">
+              <strong>大会本番（5日間）</strong>
+              <p>機体審査・技術発表会・競技・表彰式・交流会・講演会</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY JOIN ===== -->
+  <section class="section section-dark" id="why">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">WHY JOIN</span>
+        <h2 class="section-title">R-SECで得られるもの</h2>
+        <p class="section-subtitle">モデルロケットプロジェクトに参加することで身につくスキルと経験</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon-wrap">
+            <span class="skill-icon">📐</span>
+          </div>
+          <h4>設計・シミュレーション</h4>
+          <p>OpenRocketなどのシミュレーションソフトを使った弾道予測・空力解析。理論と実験の差異を考察する科学的思考力が身につきます。</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon-wrap">
+            <span class="skill-icon">🔧</span>
+          </div>
+          <h4>製作・加工技術</h4>
+          <p>バルサ材・カーボン繊維・アルミなどの加工技術。3Dプリンターを活用したパーツ製作など、実践的なものづくりスキルが習得できます。</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon-wrap">
+            <span class="skill-icon">💻</span>
+          </div>
+          <h4>電子・プログラミング</h4>
+          <p>ArduinoやRaspberry Piを使ったセンサー制御・データロギング・テレメトリ送信など、組み込みシステムの実装経験が積めます。</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon-wrap">
+            <span class="skill-icon">📊</span>
+          </div>
+          <h4>データ解析</h4>
+          <p>飛行データ（高度・加速度・姿勢角）の取得と解析。Pythonを用いた可視化・シミュレーションとの比較検証を行います。</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon-wrap">
+            <span class="skill-icon">🗣️</span>
+          </div>
+          <h4>技術発表・プレゼン</h4>
+          <p>大会での技術発表会に向けて、設計思想・実験結果・考察を論理的にまとめて発表する能力が鍛えられます。</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon-wrap">
+            <span class="skill-icon">🤝</span>
+          </div>
+          <h4>チームワーク・マネジメント</h4>
+          <p>複数の専門分野（機体・電子・ソフト）にまたがるプロジェクトを、締切（大会）に向けてチームで管理・推進する経験が得られます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JOIN CTA ===== -->
+  <section class="section section-cta" id="join">
+    <div class="container">
+      <div class="cta-wrap">
+        <div class="cta-content">
+          <span class="section-label">JOIN US</span>
+          <h2 class="cta-title">
+            宇宙への挑戦を、<br />
+            <span class="cta-highlight">R-SECで始めよう。</span>
+          </h2>
+          <p class="cta-desc">
+            理系・工学系の知識を活かして、本物のロケットを自分の手で作り上げる。
+            種子島の青空に、あなたが設計したロケットを飛ばしてみませんか？
+            前提知識は不要です。入会後にすべてサポートします。
+          </p>
+          <div class="cta-points">
+            <div class="cta-point">✓ 入会後にライセンス取得をサポート</div>
+            <div class="cta-point">✓ 先輩が設計・製作を一から指導</div>
+            <div class="cta-point">✓ 1年生から大会出場のチャンス</div>
+            <div class="cta-point">✓ 文系・理系問わず歓迎</div>
+          </div>
+          <div class="cta-actions">
+            <a href="#" class="btn-primary btn-large">新歓情報を見る</a>
+            <a href="#" class="btn-ghost btn-large">R-SECについて</a>
+          </div>
+        </div>
+        <div class="cta-visual">
+          <div class="cta-img-wrap">
+            <img src="rocket_launch1.jpg" alt="モデルロケット打ち上げ" class="cta-img" />
+            <div class="cta-img-caption">
+              <span>📍 打ち上げ実習の様子</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">⚙</span>
+          <div>
+            <div class="footer-name">R-SEC</div>
+            <div class="footer-subname">東京理科大学 宇宙工学サークル</div>
+            <div class="footer-subname">Rocket &amp; Space Engineering Circle</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>プロジェクト</h5>
+            <ul>
+              <li><a href="#">モデルロケット</a></li>
+              <li><a href="#">CanSat</a></li>
+              <li><a href="#">ハイブリッドロケット</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>大会・イベント</h5>
+            <ul>
+              <li><a href="https://jaxa-rocket-contest.jp/" target="_blank" rel="noopener">種子島ロケットコンテスト</a></li>
+              <li><a href="https://jar.or.jp/" target="_blank" rel="noopener">日本モデルロケット協会</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>サークル情報</h5>
+            <ul>
+              <li><a href="#">活動紹介</a></li>
+              <li><a href="#">新歓情報</a></li>
+              <li><a href="#">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 R-SEC 東京理科大学 宇宙工学サークル. All rights reserved.</p>
+        <p class="footer-disclaimer">このページはR-SECの広報資料です。掲載情報は変更になる場合があります。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
