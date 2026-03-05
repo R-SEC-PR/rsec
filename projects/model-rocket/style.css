@@ -1236,6 +1236,99 @@ a {
   color: var(--white-dim);
 }
 
+/* ===== QR CODE BLOCK ===== */
+.cta-qr-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cta-qr-item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(245,196,0,0.2);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.cta-qr-item:hover {
+  border-color: rgba(245,196,0,0.5);
+  background: rgba(245,196,0,0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(245,196,0,0.1);
+}
+
+.cta-qr-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 200px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.cta-qr-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.cta-qr-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cta-qr-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.cta-qr-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 2px;
+}
+
+.cta-qr-desc {
+  font-size: 0.82rem;
+  color: var(--white-faint);
+}
+
+@media (min-width: 600px) {
+  .cta-qr-block {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .cta-qr-item {
+    flex: 1;
+  }
+  .cta-qr-frame {
+    max-width: 160px;
+  }
+}
+
+@media (min-width: 900px) {
+  .cta-qr-block {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .cta-qr-item {
+    flex: unset;
+  }
+  .cta-qr-frame {
+    max-width: 180px;
+  }
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: var(--black);
