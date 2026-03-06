@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CanSat | R-SEC 東京理科大学 宇宙工学サークル</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../../" class="nav-logo">
+        <span class="logo-icon">⚙</span>
+        <span class="logo-text">R-SEC</span>
+        <span class="logo-sub">東京理科大学 宇宙工学サークル</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">CanSatとは</a></li>
+        <li><a href="#structure">機体構造</a></li>
+        <li><a href="#mission">ミッション</a></li>
+        <li><a href="#competitions">大会</a></li>
+        <li><a href="#join" class="nav-cta">参加する</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="cansat_beach.jpg" alt="CanSat機体" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        CANSAT PROJECT
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line1">空き缶サイズの、</span>
+        <span class="title-line2">本物の衛星工学を</span>
+        <span class="title-line3">自分の手で。</span>
+      </h1>
+      <p class="hero-desc">
+        350mlの缶の中に、人工衛星のすべてを詰め込む。<br />
+        R-SECでは、学生自らがCanSatを設計・製作・運用し、<br />
+        日本最大級の宇宙大会に挑戦しています。
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">350<span class="stat-unit">ml</span></span>
+          <span class="stat-label">缶と同じサイズ</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">30<span class="stat-unit">m+</span></span>
+          <span class="stat-label">上空から放出</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">2<span class="stat-unit">大会</span></span>
+          <span class="stat-label">年間出場目標</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#about" class="btn-primary">CanSatを知る</a>
+        <a href="#competitions" class="btn-secondary">大会について</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="ticker-content">
+        CanSat &nbsp;●&nbsp; 模擬人工衛星 &nbsp;●&nbsp; 種子島宇宙コンテスト &nbsp;●&nbsp; 能代宇宙イベント &nbsp;●&nbsp; 東京理科大学 &nbsp;●&nbsp; R-SEC &nbsp;●&nbsp; 宇宙工学 &nbsp;●&nbsp; 自律制御 &nbsp;●&nbsp; GPS &nbsp;●&nbsp; 無線通信 &nbsp;●&nbsp;
+        CanSat &nbsp;●&nbsp; 模擬人工衛星 &nbsp;●&nbsp; 種子島宇宙コンテスト &nbsp;●&nbsp; 能代宇宙イベント &nbsp;●&nbsp; 東京理科大学 &nbsp;●&nbsp; R-SEC &nbsp;●&nbsp; 宇宙工学 &nbsp;●&nbsp; 自律制御 &nbsp;●&nbsp; GPS &nbsp;●&nbsp; 無線通信 &nbsp;●&nbsp;
+      </span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section section-dark" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-lead">
+          <span class="section-label">ABOUT</span>
+          <h2 class="section-title">CanSatとは？</h2>
+          <p>
+            <strong>CanSat（缶サット）</strong>とは、350ml缶と同じサイズの中に、
+            人工衛星が持つすべての機能を凝縮した<strong>模擬人工衛星</strong>です。
+            東京大学の中須賀真一教授によって開発されたこの教育プログラムは、
+            マイクロコンピュータ・センサ・GPS・無線通信機・電源系などを
+            実際に学生自身が設計・製作することで、宇宙開発に必要な
+            あらゆる技術を体験的に習得できます。
+          </p>
+          <p>
+            CanSatは宇宙には行きません。気球やクレーン車で上空に運ばれ、
+            放出されたあとにパラシュートで降下しながら、
+            センサデータの収集・送信や自律制御などのミッションを遂行します。
+            そのわずか数分間のフライトのために、チーム全員が半年以上をかけて
+            設計・製作・テストを繰り返すのです。
+          </p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">🛰️</div>
+              <div class="feature-body">
+                <h4>Can-Satellite の略</h4>
+                <p>空き缶（Can）サイズの模擬人工衛星（Satellite）。本物の衛星開発と同じプロセスを、学生スケールで体験できる。</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🎓</div>
+              <div class="feature-body">
+                <h4>前提知識は不要</h4>
+                <p>入学後に基礎から学べる勉強会を開催。先輩メンバーが設計・製作・プログラミングを一から丁寧にサポートします。</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🏆</div>
+              <div class="feature-body">
+                <h4>1年生から大会出場のチャンス</h4>
+                <p>入学した年の8月・能代宇宙イベントから参加可能。先輩と一緒に本番の大会を経験できます。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="diagram-card">
+            <img src="cansat_white.jpg" alt="CanSat機体（白）" class="diagram-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STRUCTURE ===== -->
+  <section class="section" id="structure">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">STRUCTURE</span>
+        <h2 class="section-title">CanSatの構造</h2>
+        <p class="section-subtitle">
+          空き缶サイズの筐体の中に、衛星開発に必要なすべての要素が詰まっています。<br />
+          R-SECでは、これらすべてのシステムを学生自身が設計・製作します。
+        </p>
+      </div>
+      <div class="structure-grid">
+        <div class="part-card">
+          <div class="part-num">01</div>
+          <div class="part-icon">🖥️</div>
+          <h3 class="part-name">マイコン (MCU)</h3>
+          <p class="part-desc">CanSatの頭脳。センサデータの処理・制御命令の実行・通信管理をすべて担う中枢システム。ArduinoやSTM32などを使用。</p>
+        </div>
+        <div class="part-card">
+          <div class="part-num">02</div>
+          <div class="part-icon">📡</div>
+          <h3 class="part-name">GPS モジュール</h3>
+          <p class="part-desc">現在位置をリアルタイムで取得。自律制御カムバック競技では、目標地点への誘導に不可欠なコンポーネント。</p>
+        </div>
+        <div class="part-card">
+          <div class="part-num">03</div>
+          <div class="part-icon">📻</div>
+          <h3 class="part-name">無線通信機</h3>
+          <p class="part-desc">地上局との双方向通信を実現。テレメトリデータの送信やコマンドの受信を担う。920MHz帯などを使用。</p>
+        </div>
+        <div class="part-card">
+          <div class="part-num">04</div>
+          <div class="part-icon">🌡️</div>
+          <h3 class="part-name">各種センサ</h3>
+          <p class="part-desc">気温・気圧・加速度・ジャイロなど多様なセンサを搭載。ミッションに応じてチームが自由に設計・選定する。</p>
+        </div>
+        <div class="part-card">
+          <div class="part-num">05</div>
+          <div class="part-icon">🔋</div>
+          <h3 class="part-name">電源システム</h3>
+          <p class="part-desc">限られたスペースに収まる電源設計が必要。バッテリー選定から電力管理まで学生が一から担当する。</p>
+        </div>
+        <div class="part-card">
+          <div class="part-num">06</div>
+          <div class="part-icon">🪂</div>
+          <h3 class="part-name">パラシュート機構</h3>
+          <p class="part-desc">安全な降下のための展開機構。降下速度5m/s以下を確保するための設計が求められる重要な機構。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MISSION FLOW ===== -->
+  <section class="section section-accent" id="mission">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">MISSION FLOW</span>
+        <h2 class="section-title">CanSatのミッションフロー</h2>
+        <p class="section-subtitle">
+          CanSatの競技は、設計から回収まで、本物の衛星ミッションと同じプロセスで進行します。
+        </p>
+      </div>
+      <div class="steps-list">
+        <div class="step">
+          <div class="step-num-wrap">
+            <span class="step-num">01</span>
+          </div>
+          <div class="step-body">
+            <h4>設計・製作 <span class="step-en">DESIGN & BUILD</span></h4>
+            <p>ミッションを定義し、回路設計・機体設計・ソフトウェア開発を行う。チームで役割を分担し、半年以上かけて機体を完成させる。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num-wrap">
+            <span class="step-num">02</span>
+          </div>
+          <div class="step-body">
+            <h4>機体審査 <span class="step-en">SAFETY REVIEW</span></h4>
+            <p>大会当日の前日に安全審査を受ける。設計計画書の提出と機体の安全基準確認が行われる。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num-wrap">
+            <span class="step-num">03</span>
+          </div>
+          <div class="step-body">
+            <h4>投下・降下 <span class="step-en">RELEASE & DESCENT</span></h4>
+            <p>大型クレーン車で高度30m前後まで吊り上げられ、遠隔操作で投下。パラシュートで降下しながらミッションを開始する。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num-wrap">
+            <span class="step-num">04</span>
+          </div>
+          <div class="step-body">
+            <h4>ミッション遂行 <span class="step-en">MISSION EXECUTION</span></h4>
+            <p>自律制御または遠隔制御で目標地点へ向かう。地上局でテレメトリを監視しながら20分以内にミッションを完了させる。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num-wrap">
+            <span class="step-num">05</span>
+          </div>
+          <div class="step-body">
+            <h4>回収・評価 <span class="step-en">RECOVERY & REVIEW</span></h4>
+            <p>機体を回収し、制御履歴データを提出。目標地点までの距離・所要時間・技術的達成度が総合評価される。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">SKILLS YOU LEARN</span>
+        <h2 class="section-title">CanSatで身につく力</h2>
+        <p class="section-subtitle">
+          CanSatプロジェクトを通じて、宇宙開発の現場で求められる実践的なスキルが身につきます。
+        </p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon-wrap">⚙️</div>
+          <h4>機械設計</h4>
+          <p>筐体設計・パラシュート機構・展開機構など、実際に動く機械を設計する力。CADを使った3Dモデリングも習得できます。</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon-wrap">💻</div>
+          <h4>組み込みプログラミング</h4>
+          <p>C/C++によるマイコンプログラミング、センサ制御、自律制御アルゴリズムの実装。実際に動くコードを書く経験が積めます。</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon-wrap">🔌</div>
+          <h4>電気・回路設計</h4>
+          <p>PCB設計・電源回路・無線通信回路の設計と実装。KiCadなどのEDAツールを使った実践的な回路開発を経験できます。</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon-wrap">📊</div>
+          <h4>データ解析</h4>
+          <p>センサデータの処理・可視化・フライトデータの分析。PythonやMATLABを活用した科学的なデータ処理能力が身につきます。</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon-wrap">🤝</div>
+          <h4>チームワーク</h4>
+          <p>設計・製作・運用を分担するチーム開発。問題発見から解決までをチームで乗り越える、実践的なプロジェクト管理能力。</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon-wrap">📝</div>
+          <h4>技術文書作成</h4>
+          <p>設計計画書・技術発表会資料の作成。エンジニアとして必須のドキュメント力と、論理的なプレゼンテーション能力を養います。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPETITIONS ===== -->
+  <section class="section" id="competitions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">COMPETITIONS</span>
+        <h2 class="section-title">日本の学生CanSat大会</h2>
+        <p class="section-subtitle">
+          R-SECでは、日本を代表する2つの学生宇宙大会への出場を目標に活動しています。<br />
+          どちらも、全国の大学・高専から精鋭チームが集まる本格的な競技会です。
+        </p>
+      </div>
+
+      <!-- 種子島 -->
+      <div class="contest-block">
+        <div class="contest-hero">
+          <div class="contest-hero-bg contest-tanegashima">
+            <div class="contest-hero-overlay">
+              <div class="contest-hero-inner">
+                <div class="contest-num">COMPETITION 01</div>
+                <h3 class="contest-name">種子島宇宙コンテスト</h3>
+                <p class="contest-alias">通称「種コン」</p>
+                <div class="contest-location">📍 JAXA種子島宇宙センター　鹿児島県</div>
+                <div class="contest-badge-row">
+                  <span class="contest-badge">毎年3月開催</span>
+                  <span class="contest-badge">5日間</span>
+                  <span class="contest-badge">高専・大学・一般</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contest-about">
+          <p>
+            日本で最も有名な学生ロケット・CanSat大会。JAXAの種子島宇宙センターを舞台に、
+            全国から学生・社会人チームが集結します。
+            <strong>「日本で一番宇宙に近い場所」</strong>から自分たちの機体を飛ばす、
+            唯一無二の体験ができます。2005年から続く歴史ある大会です。
+          </p>
+        </div>
+        <div class="events-grid">
+          <div class="event-card event-card-highlight">
+            <div class="event-num">種目⑤</div>
+            <div class="event-badge cansat">CanSat部門</div>
+            <div class="event-name">自律制御カムバック</div>
+            <p class="event-desc">GPS・センサのみで目標地点に自律帰還。プログラムの腕が試される最難関種目。</p>
+            <div class="event-rule">
+              <span>投下高度：約30m（クレーン車）</span>
+              <span>制限時間：20分以内</span>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-num">種目⑥</div>
+            <div class="event-badge cansat">CanSat部門</div>
+            <div class="event-name">遠隔制御カムバック</div>
+            <p class="event-desc">地上局からの遠隔操作で目標地点へ誘導。操縦技術と機体性能の総合力を競う。</p>
+            <div class="event-rule">
+              <span>投下高度：約30m（クレーン車）</span>
+              <span>制限時間：20分以内</span>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-num">種目⑦</div>
+            <div class="event-badge cansat">CanSat部門</div>
+            <div class="event-name">オリジナルミッション</div>
+            <p class="event-desc">自由なミッションを設定し、その達成度・独創性・技術力を審査員が総合評価。</p>
+            <div class="event-rule">
+              <span>投下高度：約30m（クレーン車）</span>
+              <span>審査員による総合評価</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 能代 -->
+      <div class="contest-block" id="noshiro">
+        <div class="contest-hero">
+          <div class="contest-hero-bg contest-noshiro">
+            <div class="contest-hero-overlay">
+              <div class="contest-hero-inner">
+                <div class="contest-num">COMPETITION 02</div>
+                <h3 class="contest-name">能代宇宙イベント</h3>
+                <p class="contest-alias">Noshiro Space Event</p>
+                <div class="contest-location">📍 能代宇宙広場　秋田県能代市</div>
+                <div class="contest-badge-row">
+                  <span class="contest-badge">毎年8月開催</span>
+                  <span class="contest-badge">9日間</span>
+                  <span class="contest-badge">日本最大規模</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contest-about">
+          <p>
+            毎年8月中旬に秋田県能代市で開催される、<strong>日本最大規模のアマチュア宇宙大会</strong>。
+            大学生によるハイブリッドロケット打ち上げと、UNISEC主催のCanSat競技が同時開催される
+            9日間のビッグイベントです。全国の大学・高専から100チーム以上が参加し、
+            技術交流会や企業との交流会も充実しています。
+          </p>
+        </div>
+        <div class="noshiro-layout">
+          <div class="noshiro-img-wrap">
+            <img src="cansat_dev.jpg" alt="CanSat開発・運用の様子" class="noshiro-img" />
+          </div>
+          <div class="events-grid noshiro-events">
+            <div class="event-card event-card-highlight">
+              <div class="event-badge cansat">CanSat競技</div>
+              <div class="event-name">UNISEC缶サット競技</div>
+              <p class="event-desc">大学生チームによる本格的なCanSat競技。自律制御・遠隔制御など多様な種目が設けられる。</p>
+            </div>
+            <div class="event-card">
+              <div class="event-badge rocket">ロケット</div>
+              <div class="event-name">ハイブリッドロケット打ち上げ</div>
+              <p class="event-desc">大学生チームが自作したハイブリッドロケットを海岸から打ち上げる壮大な光景が見られる。</p>
+            </div>
+            <div class="event-card">
+              <div class="event-badge rocket">交流</div>
+              <div class="event-name">技術交流会・企業交流会</div>
+              <p class="event-desc">全国の学生チームと技術を共有し、宇宙関連企業の担当者と直接交流できる貴重な機会。</p>
+            </div>
+          </div>
+        </div>
+        <div class="contest-info-box">
+          <div class="cib-row"><span class="cib-label">開催時期</span><span class="cib-value">毎年8月中旬（9日間）</span></div>
+          <div class="cib-row"><span class="cib-label">開催地</span><span class="cib-value">秋田県能代市 能代宇宙広場</span></div>
+          <div class="cib-row"><span class="cib-label">規模</span><span class="cib-value">日本最大のアマチュア宇宙大会</span></div>
+          <div class="cib-row"><span class="cib-label">主催</span><span class="cib-value">UNISEC（大学宇宙工学コンソーシアム）</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section class="section section-accent">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">ANNUAL SCHEDULE</span>
+        <h2 class="section-title">R-SECの年間スケジュール</h2>
+        <p class="section-subtitle">
+          入学から大会まで、1年間を通じてCanSatプロジェクトに取り組みます。
+        </p>
+      </div>
+      <div class="contest-timeline">
+        <div class="timeline-title">CanSatプロジェクト 年間スケジュール</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-month">4月</div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <strong>新入生歓迎・チーム編成</strong>
+              <p>新入生を迎えてチームを編成。CanSatの基礎講習会を実施。電子工作・プログラミング入門も行います。</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-month">5-7月</div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <strong>設計フェーズ</strong>
+              <p>ミッション定義・システム設計・回路設計・ソフトウェア開発を並行して進める。フィールドテストも実施。</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-month">8月</div>
+            <div class="tl-dot tl-highlight"></div>
+            <div class="tl-content tl-highlight">
+              <strong>🏆 能代宇宙イベント</strong>
+              <p>秋田県能代市で日本最大規模のCanSat・ロケット大会に出場。1年生も先輩と一緒に参加できます。</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-month">9-12月</div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <strong>製作・テストフェーズ</strong>
+              <p>能代の結果を踏まえて機体を改良。フィールドテストを繰り返し、種子島大会に向けて精度を高める。</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-month">1-2月</div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <strong>最終調整・機体審査準備</strong>
+              <p>設計計画書の作成と最終テスト。種子島大会に向けた機体審査準備と技術発表会の練習。</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-month">3月</div>
+            <div class="tl-dot tl-highlight"></div>
+            <div class="tl-content tl-highlight">
+              <strong>🚀 種子島宇宙コンテスト</strong>
+              <p>JAXA種子島宇宙センターで年間活動の集大成となる競技に挑む。日本で一番宇宙に近い場所で機体を飛ばす。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JOIN CTA ===== -->
+  <section class="section section-cta" id="join">
+    <div class="container">
+      <div class="cta-wrap">
+        <div class="cta-content">
+          <span class="section-label">JOIN US</span>
+          <h2 class="cta-title">
+            宇宙への挑戦を、<br />
+            <span class="cta-highlight">R-SECで始めよう。</span>
+          </h2>
+          <p class="cta-desc">
+            宇宙に興味があれば、専門知識は一切不要です。
+            設計・プログラミング・電子工作・広報など、
+            あなたの得意を活かせる場所があります。
+            前提知識は不要です。入会後にすべてサポートします。
+          </p>
+          <div class="cta-points">
+            <div class="cta-point">✓ 先輩が設計・製作を一から指導</div>
+            <div class="cta-point">✓ 1年生から大会出場のチャンス</div>
+            <div class="cta-point">✓ 文系・理系問わず歓迎</div>
+            <div class="cta-point">✓ 機体班・ソフト班・電装班・広報班から選択</div>
+          </div>
+          <div class="cta-actions">
+            <a href="../../" class="btn-primary btn-large">新歓情報を見る</a>
+            <a href="../../" class="btn-ghost btn-large">R-SECについて</a>
+          </div>
+        </div>
+        <div class="cta-visual">
+          <div class="cta-qr-block">
+            <div class="cta-qr-item">
+              <div class="cta-qr-frame">
+                <img src="qr_line.jpg" alt="R-SEC LINEオープンチャット QRコード" class="cta-qr-img" />
+              </div>
+              <div class="cta-qr-label">
+                <span class="cta-qr-icon">💬</span>
+                <div>
+                  <div class="cta-qr-title">LINEオープンチャット</div>
+                  <div class="cta-qr-desc">気軽に質問・連絡はこちら</div>
+                </div>
+              </div>
+            </div>
+            <div class="cta-qr-item">
+              <div class="cta-qr-frame">
+                <img src="qr_sns.png" alt="R-SEC SNSリンク QRコード" class="cta-qr-img" />
+              </div>
+              <div class="cta-qr-label">
+                <span class="cta-qr-icon">🔗</span>
+                <div>
+                  <div class="cta-qr-title">R-SEC 公式SNS</div>
+                  <div class="cta-qr-desc">各種SNS・活動情報はこちら</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">⚙</span>
+          <div>
+            <div class="footer-name">R-SEC</div>
+            <div class="footer-subname">東京理科大学 宇宙工学サークル</div>
+            <div class="footer-subname">Rocket &amp; Space Engineering Circle</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>プロジェクト</h5>
+            <ul>
+              <li><a href="../model-rocket/">モデルロケット</a></li>
+              <li><a href="#">CanSat</a></li>
+              <li><a href="#">ハイブリッドロケット</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>大会・イベント</h5>
+            <ul>
+              <li><a href="https://jaxa-rocket-contest.jp/" target="_blank" rel="noopener">種子島ロケットコンテスト</a></li>
+              <li><a href="https://noshiro-space-event.org/" target="_blank" rel="noopener">能代宇宙イベント</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>サークル情報</h5>
+            <ul>
+              <li><a href="../../">活動紹介</a></li>
+              <li><a href="../../">新歓情報</a></li>
+              <li><a href="../../">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 R-SEC 東京理科大学 宇宙工学サークル. All rights reserved.</p>
+        <p class="footer-disclaimer">このページはR-SECの広報資料です。掲載情報は変更になる場合があります。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
