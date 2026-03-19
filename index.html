@@ -432,6 +432,87 @@
             color: var(--black);
         }
 
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            background: var(--dark);
+            border-radius: var(--radius-lg);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .video-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 40px;
+            color: var(--white);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ===== EVENT SECTION ===== */
+        .event-section {
+            background: linear-gradient(135deg, rgba(0, 242, 255, 0.05) 0%, rgba(61, 255, 176, 0.05) 100%);
+            border-radius: var(--radius-lg);
+            padding: 60px 40px;
+            text-align: center;
+            border: 1px solid rgba(0, 242, 255, 0.2);
+        }
+
+        .event-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .event-schedule {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .event-schedule {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .event-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+        }
+
+        .event-location {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+        }
+
+        .event-date {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+        }
+
         /* ===== FOOTER ===== */
         footer {
             padding: 60px 0;
@@ -475,8 +556,8 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#event">Event</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="https://masmaro.github.io/rsec/projects/model-rocket/" class="nav-cta">Rocket</a></li>
             </ul>
         </div>
     </nav>
@@ -487,7 +568,7 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-badge animate">UNIVERSITY AEROSPACE CLUB</div>
+            <div class="hero-badge animate">RIKADAI SPACE ENGINEERING CIRCLE</div>
             <h1 class="hero-title animate delay-1">R-SEC</h1>
             <p class="hero-subtitle animate delay-2">理科大一、宇宙に近いサークル</p>
             
@@ -505,6 +586,24 @@
             </div>
         </div>
     </header>
+
+    <section id="event" class="section">
+        <div class="container">
+            <div class="event-section">
+                <h2 class="event-title">新歓日程</h2>
+                <div class="event-schedule">
+                    <div class="event-item">
+                        <div class="event-location">葛飾キャンパス</div>
+                        <div class="event-date">4月2日 (木) @E103</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-location">野田キャンパス</div>
+                        <div class="event-date">4月12日 (日) @K305</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="projects" class="section">
         <div class="container">
@@ -562,31 +661,37 @@
         </div>
     </section>
 
+    <section class="section">
+        <div class="container">
+            <div class="video-section">
+                <h2 class="video-title">R-SECとは？</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/BFhD6ca7ccQ" allowfullscreen="" loading="lazy" title="R-SEC 新歓PV"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section">
         <div class="container">
             <div class="contact-section">
                 <div class="contact-text">
                     <h2>JOIN US!</h2>
                     <p>新歓期間はモデルロケット製作や電子工作を体験できます！興味があれば学年・学部問わず大歓迎！日程は各種SNSやオープンチャットでチェック！</p>
-                    <div style="display: flex; gap: 16px; margin-top: 30px;">
-                        <a href="#" class="btn btn-outline" style="padding: 12px 24px;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="btn btn-outline" style="padding: 12px 24px;"><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <p style="font-size: 0.85rem; color: var(--gray-light); margin-top: 20px;">QR画像をタップしてリンク先にジャンプできます</p>
                 </div>
                 <div class="qr-grid">
                     <div class="qr-item">
                         <span class="qr-label">新歓オープンチャット</span>
-                        <div class="qr-img">
-                            <img src="images/qr_line.jpg" alt="LINE QR">
-                        </div>
-                        <a href="#" class="qr-btn">LINEで開く</a>
+                        <a href="https://line.me/ti/g2/s53-cMOZ_WM-weZjBFGe9BK26XzErD270IH3ZA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" class="qr-img" target="_blank" rel="noopener noreferrer">
+                            <img src="images/qr_line.jpg" alt="LINE QR" style="cursor: pointer;">
+                        </a>
                     </div>
                     <div class="qr-item">
                         <span class="qr-label">各種SNSリンク</span>
-                        <div class="qr-img">
-                            <img src="images/qr_sns.png" alt="SNS QR">
-                        </div>
-                        <a href="#" class="qr-btn">SNSを見る</a>
+                        <a href="https://qr.quel.jp/om/b0orrd" class="qr-img" target="_blank" rel="noopener noreferrer">
+                            <img src="images/qr_sns.png" alt="SNS QR" style="cursor: pointer;">
+                        </a>
                     </div>
                 </div>
             </div>
