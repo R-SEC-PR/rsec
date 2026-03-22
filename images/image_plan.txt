@@ -1,0 +1,13 @@
+New Images in images/ folder:
+1. IMG_3983.jpeg: ホワイトボードでの議論風景。開発・ミーティングの様子に最適。
+2. IMG_4306.jpeg: バスタブでの防水・浮力テスト？試験風景として使用可能。
+3. IMG_4609.jpeg: ロケットの打ち上げ準備風景。
+4. 種コン_会場.jpg: 種子島宇宙センターの看板。大会セクションの背景やビジュアルに最適。
+5. 種コン_機体_隊列走行.jpg: CanSat機体の近接写真。技術的な詳細や機体紹介に最適。
+6. 種コン_機体_隊列走行 (1).jpg: 隊列走行の様子。
+
+Proposed replacements in CanSat page:
+- Hero Image (cansat_beach.jpg) -> 種コン_機体_隊列走行.jpg
+- About Visual (cansat_white.jpg) -> cansat_flow.png (provided diagram)
+- Noshiro Image (cansat_dev.jpg) -> IMG_3983.jpeg (development scene)
+- Competition 01 (Tanegashima) -> 種コン_会場.jpg
