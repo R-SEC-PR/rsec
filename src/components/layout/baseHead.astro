@@ -1,0 +1,88 @@
+---
+import type { LayoutProps as Props } from "../../types";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+
+const {
+  title,
+  description,
+  pageType = "website",
+  image = "",
+  imageAlt = "",
+} = Astro.props as Props;
+
+//Google Analytics関係
+const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const hasGoogleAnalytics = Boolean(GA_MEASUREMENT_ID);
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+//ogp画像（検索時に出てくる画像設定
+/*propsにあればpublicからの座標に、でなければundefined*/
+const ogpImageURL = image ? new URL(image, canonicalURL) : undefined;
+
+/**
+ * 実際に表示するタイトルと説明
+ *
+ * Propsの`title`がundefinedならサイト全体の`SITE_TITLE`を表示し、それ以外なら`${title} | ${SITE_TITLE}`の形式で表示する
+ */
+const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
+const pageDescription = description || SITE_DESCRIPTION;
+
+//twitterCard設定
+const twitterCardType = ogpImageURL ? "summary_large_image" : "summary";
+
+const googleAnalyticsScriptURL = hasGoogleAnalytics
+  ? `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+  : undefined;
+const googleAnalyticsInlineScript = hasGoogleAnalytics
+  ? `window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag("js", new Date());
+gtag("config", "${GA_MEASUREMENT_ID}");`
+  : undefined;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL.href} />
+
+<!--ページタイトル -->
+<title>{pageTitle}</title>
+<!--ページ説明文 -->
+<meta name="description" content={pageDescription} />
+
+<meta property="og:site_name" content={SITE_TITLE} />
+<!--ページタイトル -->
+<meta property="og:title" content={pageTitle} />
+<!--ページ説明文 -->
+<meta property="og:description" content={pageDescription} />
+<!--ページのタイプ -->
+<meta property="og:type" content={pageType} />
+{
+  ogpImageURL && (
+    <>
+      <meta property="og:image" content={ogpImageURL.href} />
+      {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+    </>
+  )
+}
+
+<meta name="twitter:card" content={twitterCardType} />
+<meta name="twitter:title" content={pageTitle} />
+<!--ページ説明文 -->
+<meta name="twitter:description" content={pageDescription} />
+{ogpImageURL && <meta name="twitter:image" content={ogpImageURL.href} />}
+
+{
+  hasGoogleAnalytics && (
+    <>
+      <script is:inline async src={googleAnalyticsScriptURL} />
+      <script is:inline set:html={googleAnalyticsInlineScript} />
+    </>
+  )
+}
