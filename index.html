@@ -135,6 +135,66 @@
 
 	.nav-accordion{
 	    display:none;
+	    height:50px;
+	    width:50px;
+	    cursor:pointer;
+	    margin:auto 0;
+	    color:red;
+	    position:relative;
+	    #accordion_line_1{
+		width:100%;
+		position:absolute;
+		top:20%;
+		left:0;
+		transition:transform 0.5s ease;
+	    }
+	    #accordion_line_2{
+		width:100%;
+		position:absolute;
+		top:50%;
+		left:0;
+		transition:opacity 0.5s ease;
+	    }
+	    #accordion_line_3{
+		width:100%;
+		position:absolute;
+		top:80%;
+		left:0;
+		transition:transform 0.5s ease;
+	    }
+	    #navcheck{display:none;}
+	}
+	.nav-accordion:has(input:checked){
+	    #accordion_line_1{
+		transform: translateY(15px) rotateZ(45deg);
+	    }
+	    #accordion_line_3{
+		transform: translateY(-15px) rotateZ(-45deg);
+	    }
+	    #accordion_line_2{
+		opacity:0;
+	    }
+    	    .nav-accordion-links{display:block;}
+	}
+	.nav-accordion-links{
+display:none;
+	    position:absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: max-content;
+    font-size: 18px;
+    background-color: var(--black);
+    padding: 20px;
+    border-radius: 16px;
+    color: var(--white);
+    border:1.5px solid var(--yellow-dark);
+transition:transform 0.5s ease,opacity 0.5s ease;
+	    li{
+		margin-top:0.5lh;
+	    }
+	    li:hover{
+		color:var(--yellow);
+	    }
 	}
 
         @media (max-width: 768px) {
@@ -573,9 +633,20 @@
                 <li><a href="#event">Event</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+	    <label for="navcheck">
 	    <div class="nav-accordion">
-		
+		<input type="checkbox" id="navcheck"/>
+		<hr id="accordion_line_1" size=3 />
+	        <hr id="accordion_line_2" size=3 />
+		<hr id="accordion_line_3" size=3 />
+		<ul class="nav-accordion-links">
+                    <li><a href="https://drunkendragonjp.github.io/welcome_project/" target="_blank">Welcome Project</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#event">Event</a></li>
+                    <li><a href="#contact">Contact</a></li>
+        	</ul>
 	    </div>
+	    </label>
         </div>
     </nav>
 
