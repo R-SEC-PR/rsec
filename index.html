@@ -133,8 +133,13 @@
             color: var(--yellow);
         }
 
+	.nav-accordion{
+	    display:none;
+	}
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
+	    .nav-accordion{display:block;}
         }
 
         /* ===== HERO ===== */
@@ -544,6 +549,14 @@
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
 
+	.special_link{
+	    font-size:14px;
+	    color:var(--accent-blue);
+	}
+	.special_link:hover{
+	    color:var(--accent-cyan);
+	}
+
     </style>
 </head>
 <body>
@@ -560,6 +573,9 @@
                 <li><a href="#event">Event</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+	    <div class="nav-accordion">
+		
+	    </div>
         </div>
     </nav>
 
@@ -574,11 +590,12 @@
             <p class="hero-subtitle animate delay-2">理科大一、宇宙に近いサークル</p>
             
             <div class="hero-info animate delay-2">
-                <div class="info-title"><i class="far fa-calendar-alt"></i> 新歓日程</div>
+                <div class="info-title"><i class="far fa-calendar-alt"></i> 新歓日程<span style="margin: 0 8px;padding: 4px 8px;background-color: var(--yellow);color: var(--black);border-radius: 12px;">開催中</span></div>
                 <div class="info-schedule">
                     葛飾 4/2 @講義棟103<br>
                     野田 4/12 @講義棟305
                 </div>
+		<a href="https://drunkendragonjp.github.io/welcome_project/" target="_blank" class="special_link">もっと詳しく ></a>
             </div>
 
             <div class="hero-actions animate delay-3">
