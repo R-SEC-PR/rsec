@@ -111,8 +111,21 @@
         }
 
         .logo-icon {
-            font-size: 1.6rem;
-            color: var(--yellow);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .logo-text {
@@ -529,6 +542,71 @@ transition:transform 0.5s ease,opacity 0.5s ease;
             border: none;
         }
 
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            border: none;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .pv-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(10, 10, 15, 0.82);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--transition), visibility var(--transition);
+        }
+
+        .pv-modal.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .pv-modal-content {
+            position: relative;
+            width: min(960px, 100%);
+            aspect-ratio: 16 / 9;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: #000;
+        }
+
+        .pv-modal-content video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pv-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 1;
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 999px;
+            background: rgba(10, 10, 15, 0.72);
+            color: var(--white);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .pv-close:hover {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
         /* ===== EVENT SECTION ===== */
         .event-section {
             background: linear-gradient(135deg, rgba(0, 242, 255, 0.05) 0%, rgba(61, 255, 176, 0.05) 100%);
@@ -621,10 +699,21 @@ transition:transform 0.5s ease,opacity 0.5s ease;
 </head>
 <body>
 
+    <div class="pv-modal" id="pvModal" aria-hidden="true">
+        <div class="pv-modal-content">
+            <button class="pv-close" id="pvClose" type="button" aria-label="PVを閉じる">
+                <i class="fas fa-times"></i>
+            </button>
+            <video id="pvAutoplay" src="pv.mp4" autoplay muted playsinline controls></video>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
-                <div class="logo-icon"><i class="fas fa-cog"></i></div>
+                <div class="logo-icon">
+                    <img src="r-sec_logo.jpg" alt="R-SEC logo">
+                </div>
                 <div class="logo-text">R-SEC</div>
             </a>
             <ul class="nav-links">
@@ -784,7 +873,7 @@ transition:transform 0.5s ease,opacity 0.5s ease;
             <div class="video-section">
                 <h2 class="video-title">R-SECとは？</h2>
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/BFhD6ca7ccQ" allowfullscreen="" loading="lazy" title="R-SEC 新歓PV"></iframe>
+                    <video src="pv.mp4" controls playsinline preload="metadata" title="R-SEC 新歓PV"></video>
                 </div>
             </div>
         </div>
@@ -840,6 +929,41 @@ transition:transform 0.5s ease,opacity 0.5s ease;
         document.querySelectorAll('.project-card, .contact-section').forEach(el => {
             el.style.opacity = '0';
             observer.observe(el);
+        });
+
+        const pvModal = document.getElementById('pvModal');
+        const pvAutoplay = document.getElementById('pvAutoplay');
+        const pvClose = document.getElementById('pvClose');
+
+        const closePvModal = () => {
+            pvModal.classList.remove('is-open');
+            pvModal.setAttribute('aria-hidden', 'true');
+            pvAutoplay.pause();
+        };
+
+        window.addEventListener('load', async () => {
+            pvModal.classList.add('is-open');
+            pvModal.setAttribute('aria-hidden', 'false');
+
+            try {
+                await pvAutoplay.play();
+            } catch (error) {
+                pvAutoplay.controls = true;
+            }
+        });
+
+        pvClose.addEventListener('click', closePvModal);
+
+        pvModal.addEventListener('click', (event) => {
+            if (event.target === pvModal) {
+                closePvModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && pvModal.classList.contains('is-open')) {
+                closePvModal();
+            }
         });
     </script>
 </body>
