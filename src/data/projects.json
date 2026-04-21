@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "モデルロケット",
+    "description": "小型ロケットの設計・打ち上げ。火薬エンジンを使用し、高度数百メートルを目指します。",
+    "imgpath": "projectImages/rocket.jpeg",
+    "pagepath": "projects/modelRocket"
+  },
+  {
+    "id": 2,
+    "title": "CanSat",
+    "description": "缶サイズの模擬人工衛星。自律制御やミッション遂行など、衛星開発の基礎を学びます。",
+    "imgpath": "projectImages/cansat.jpg",
+    "path": "projects/cansat"
+  },
+  {
+    "id": 3,
+    "title": "スペースバルーン",
+    "description": "気球を用いた成層圏の観測。高度30kmの世界を撮影し、データを収集します。",
+    "imgpath": "projectImages/cansat_white.jpg"
+  },
+  {
+    "id": 4,
+    "title": "新歓プロジェクト",
+    "description": "ミニローバーの製作、モデルロケット体験の２講座を開催。R-SECを体験しよう！",
+    "imgpath": "projectImages/welcome_rover.jpg",
+    "path": "https://drunkendragonjp.github.io/welcome_project/"
+  }
+]

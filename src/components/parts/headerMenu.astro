@@ -1,0 +1,37 @@
+---
+export interface Props{
+    navData:Array<{name:string,path:string,outer?:boolean}>;
+}
+const {navData}=Astro.props;
+---
+<nav class="menu">
+    {
+        navData.map(value=>
+            (<a
+                class="menu__link"
+                href={value.path}
+                target={value.outer?"_blank":"_self"}
+            >
+                {value.name}
+            </a>)
+        )
+    }
+</nav>
+<style lang="scss">
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    height: $header-height;
+    align-items: center;
+    gap:16px;
+    padding-right:24px;
+    &__link{
+        display:block;
+        padding:12px 4px;
+        &:hover{
+            color:$yellow;
+        }
+    }
+}
+</style>

@@ -1,0 +1,43 @@
+---
+export interface Props {
+    value:string;
+    path:string;
+    outer?:boolean;
+    style?:"primary" | "outline";
+    classNames?:string[];
+}
+const {value,path,outer,style="primary",classNames}=Astro.props;
+---
+<a href={path} target={outer?"_blank":"_self"} class:list={["btn",style].concat(classNames??[])}>
+{value}
+</a>
+<style lang="scss">
+    .btn{
+        display: inline-block;
+        gap: 10px;
+        padding: 16px 32px;
+        border-radius: $radius;
+        font-weight: 700;
+        transition: $transition;
+        cursor: pointer;
+    }
+    .primary{
+        background:$yellow;
+        color:$black;
+        &:hover{
+            background:$yellow-light;
+            transform:translateY(-3px);
+            box-shadow: 0 10px 30px rgba(245,196,0,0.3);
+        }
+    }
+    .outline{
+        border: 2px solid rgba(255,255,255,0.2);
+        color:$white;
+        &:hover{
+            border-color:$accent-cyan;
+            color:$accent-cyan;
+            transform:translateY(-3px);
+            background:rgba(0,242,255,0.05);
+        }
+    }
+</style>

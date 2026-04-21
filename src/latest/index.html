@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R-SEC | 東京理科大学 宇宙工学サークル 新歓2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --yellow: #f5c400;
+        --yellow-light: #ffd740;
+        --yellow-dark: #c49b00;
+        --black: #0a0a0f;
+        --dark: #111118;
+        --dark2: #1a1a24;
+        --dark3: #22222e;
+        --gray: #3a3a4a;
+        --gray-mid: #6b6b80;
+        --gray-light: #9a9ab0;
+        --white: #ffffff;
+        --white-dim: rgba(255, 255, 255, 0.85);
+        --white-faint: rgba(255, 255, 255, 0.55);
+
+        /* 新しいアクセントカラー */
+        --accent-cyan: #00f2ff;
+        --accent-green: #3dffb0;
+        --accent-blue: #4a9eff;
+
+        --font-jp: "Noto Sans JP", sans-serif;
+        --font-en: "Orbitron", sans-serif;
+        --font-mono: "Share Tech Mono", monospace;
+
+        --radius: 12px;
+        --radius-sm: 6px;
+        --radius-lg: 20px;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 8px 48px rgba(0, 0, 0, 0.6);
+        --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family: var(--font-jp);
+        background: var(--black);
+        color: var(--white);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ===== NAVBAR ===== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 0;
+        background: rgba(10, 10, 15, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-icon {
+        font-size: 1.6rem;
+        color: var(--yellow);
+      }
+
+      .logo-text {
+        font-family: var(--font-en);
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--yellow);
+        letter-spacing: 0.1em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .nav-links a:hover {
+        color: var(--yellow);
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 70px;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.4);
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at center,
+          transparent 0%,
+          var(--black) 100%
+        );
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        font-family: var(--font-en);
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        color: var(--accent-cyan);
+        border: 1px solid var(--accent-cyan);
+        padding: 6px 20px;
+        border-radius: 100px;
+        margin-bottom: 24px;
+        background: rgba(0, 242, 255, 0.05);
+      }
+
+      .hero-title {
+        font-family: var(--font-en);
+        font-size: clamp(3rem, 10vw, 6rem);
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 20px;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        font-weight: 500;
+        margin-bottom: 40px;
+        color: var(--white-dim);
+      }
+
+      .hero-info {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(8px);
+        padding: 24px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 40px;
+        display: inline-block;
+      }
+
+      .info-title {
+        font-size: 0.9rem;
+        color: var(--accent-green);
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+
+      .info-schedule {
+        font-size: 1.1rem;
+        font-family: var(--font-mono);
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ===== BUTTONS ===== */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 32px;
+        border-radius: var(--radius);
+        font-weight: 700;
+        transition: var(--transition);
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: var(--yellow);
+        color: var(--black);
+      }
+
+      .btn-primary:hover {
+        background: var(--yellow-light);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(245, 196, 0, 0.3);
+      }
+
+      .btn-outline {
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        color: var(--white);
+      }
+
+      .btn-outline:hover {
+        border-color: var(--accent-cyan);
+        color: var(--accent-cyan);
+        transform: translateY(-3px);
+        background: rgba(0, 242, 255, 0.05);
+      }
+
+      /* ===== PROJECTS SECTION ===== */
+      .section {
+        padding: 100px 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 16px;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .project-card {
+        background: var(--dark2);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(245, 196, 0, 0.3);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .project-img {
+        height: 240px;
+        overflow: hidden;
+      }
+
+      .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .project-card:hover .project-img img {
+        transform: scale(1.1);
+      }
+
+      .project-content {
+        padding: 30px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-tag {
+        font-family: var(--font-en);
+        font-size: 0.7rem;
+        color: var(--yellow);
+        letter-spacing: 0.1em;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+      }
+
+      .project-name {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .project-desc {
+        color: var(--gray-light);
+        margin-bottom: 24px;
+        font-size: 0.95rem;
+      }
+
+      .project-link {
+        margin-top: auto;
+        color: var(--yellow);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* ===== CONTACT/SNS SECTION ===== */
+      .contact-section {
+        background: var(--dark);
+        border-radius: var(--radius-lg);
+        padding: 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      @media (max-width: 900px) {
+        .contact-section {
+          grid-template-columns: 1fr;
+          padding: 40px 24px;
+        }
+      }
+
+      .contact-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .contact-text p {
+        color: var(--gray-light);
+        margin-bottom: 30px;
+      }
+
+      .qr-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .qr-item {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 24px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .qr-img {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 16px;
+        background: white;
+        padding: 8px;
+        border-radius: var(--radius-sm);
+      }
+
+      .qr-label {
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .qr-btn {
+        display: block;
+        padding: 10px;
+        background: var(--dark3);
+        border-radius: var(--radius-sm);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--white-dim);
+      }
+
+      .qr-btn:hover {
+        background: var(--yellow);
+        color: var(--black);
+      }
+
+      /* ===== VIDEO SECTION ===== */
+      .video-section {
+        background: var(--dark);
+        border-radius: var(--radius-lg);
+        padding: 60px 40px;
+        text-align: center;
+      }
+
+      .video-title {
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 40px;
+        color: var(--white);
+      }
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        aspect-ratio: 16 / 9;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .video-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* ===== EVENT SECTION ===== */
+      .event-section {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 242, 255, 0.05) 0%,
+          rgba(61, 255, 176, 0.05) 100%
+        );
+        border-radius: var(--radius-lg);
+        padding: 60px 40px;
+        text-align: center;
+        border: 1px solid rgba(0, 242, 255, 0.2);
+      }
+
+      .event-title {
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 30px;
+        color: var(--white);
+      }
+
+      .event-schedule {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 768px) {
+        .event-schedule {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .event-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 24px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(0, 242, 255, 0.3);
+      }
+
+      .event-location {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--accent-cyan);
+        margin-bottom: 8px;
+      }
+
+      .event-date {
+        color: var(--gray-light);
+        font-size: 0.95rem;
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        padding: 60px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--gray-mid);
+        font-size: 0.9rem;
+      }
+
+      .footer-logo {
+        font-family: var(--font-en);
+        font-weight: 700;
+        color: var(--white-faint);
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      /* アニメーション */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate {
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+      .delay-3 {
+        animation-delay: 0.6s;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          <div class="logo-icon"><i class="fas fa-cog"></i></div>
+          <div class="logo-text">R-SEC</div>
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a
+              href="https://drunkendragonjp.github.io/welcome_project/"
+              target="_blank"
+              >Welcome Project</a
+            >
+          </li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#event">Event</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-bg">
+        <img src="images/main_visual.png" alt="R-SEC Main Visual" />
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge animate">RIKADAI SPACE ENGINEERING CIRCLE</div>
+        <h1 class="hero-title animate delay-1">R-SEC</h1>
+        <p class="hero-subtitle animate delay-2">
+          理科大一、宇宙に近いサークル
+        </p>
+
+        <div class="hero-info animate delay-2">
+          <div class="info-title">
+            <i class="far fa-calendar-alt"></i> 新歓日程
+          </div>
+          <div class="info-schedule">
+            葛飾 4/2 @講義棟103<br />
+            野田 4/12 @講義棟305
+          </div>
+        </div>
+
+        <div class="hero-actions animate delay-3">
+          <a href="#projects" class="btn btn-primary">プロジェクトを見る</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="news" class="section">
+      <div class="container">
+        <div class="news-section">
+          <h2 class="news-title">NEWS</h2>
+          <div class="news-item">
+            <span class="news-date">2026年4月１日</span>
+            <span class="news-content"
+              >電子工作講座特設ページを作成しました</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="event" class="section">
+      <div class="container">
+        <div class="event-section">
+          <h2 class="event-title">新歓日程</h2>
+          <div class="event-schedule">
+            <div class="event-item">
+              <div class="event-location">葛飾キャンパス</div>
+              <div class="event-date">4月2日 (木) @講義棟103</div>
+            </div>
+            <div class="event-item">
+              <div class="event-location">野田キャンパス</div>
+              <div class="event-date">4月12日 (日) @講義棟305</div>
+            </div>
+          </div>
+          <div
+            class="hero-actions"
+            style="margin-top: 20px; text-align: center"
+          >
+            <a href="#contact" class="btn btn-outline">新歓チャットに参加</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">PROJECTS</h2>
+          <p style="color: var(--gray-light)">
+            航空宇宙に興味のある学生が切磋琢磨中！！あなたも一緒にどうですか？
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <!-- Model Rocket -->
+          <div class="project-card">
+            <div class="project-img">
+              <img
+                src="images/IMG_4609.jpeg"
+                alt="Model Rocket"
+                style="object-position: center 30%"
+              />
+            </div>
+            <div class="project-content">
+              <div class="project-tag">Project 01</div>
+              <h3 class="project-name">モデルロケット</h3>
+              <p class="project-desc">
+                小型ロケットの設計・打ち上げ。火薬エンジンを使用し、高度数百メートルを目指します。
+              </p>
+              <a href="projects/model-rocket/" class="project-link">
+                詳しく見る <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- CanSat -->
+          <div class="project-card">
+            <div class="project-img">
+              <img src="projects/cansat/cansat_white.jpg" alt="CanSat" />
+            </div>
+            <div class="project-content">
+              <div class="project-tag">Project 02</div>
+              <h3 class="project-name">CanSat</h3>
+              <p class="project-desc">
+                缶サイズの模擬人工衛星。自律制御やミッション遂行など、衛星開発の基礎を学びます。
+              </p>
+              <a href="projects/cansat/" class="project-link">
+                詳しく見る <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Space Balloon -->
+          <div class="project-card">
+            <div class="project-img">
+              <img
+                src="images/main_visual.png"
+                style="object-position: 80% center"
+                alt="Space Balloon"
+              />
+            </div>
+            <div class="project-content">
+              <div class="project-tag">Project 03</div>
+              <h3 class="project-name">スペースバルーン</h3>
+              <p class="project-desc">
+                気球を用いた成層圏の観測。高度30kmの世界を撮影し、データを収集します。
+              </p>
+              <div
+                class="project-link"
+                style="color: var(--gray-mid); cursor: default"
+              >
+                Coming Soon
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="video-section">
+          <h2 class="video-title">R-SECとは？</h2>
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/BFhD6ca7ccQ"
+              allowfullscreen=""
+              loading="lazy"
+              title="R-SEC 新歓PV"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-section">
+          <div class="contact-text">
+            <h2>JOIN US!</h2>
+            <p>
+              新歓期間はモデルロケット製作や電子工作を体験できます！興味があれば学年・学部問わず大歓迎！日程は各種SNSやオープンチャットでチェック！
+            </p>
+            <p
+              style="
+                font-size: 0.85rem;
+                color: var(--gray-light);
+                margin-top: 20px;
+              "
+            >
+              QR画像をタップしてリンク先にジャンプできます
+            </p>
+          </div>
+          <div class="qr-grid">
+            <div class="qr-item">
+              <span class="qr-label">新歓オープンチャット</span>
+              <a
+                href="https://line.me/ti/g2/s53-cMOZ_WM-weZjBFGe9BK26XzErD270IH3ZA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+                class="qr-img"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="images/qr_line.jpg"
+                  alt="LINE QR"
+                  style="cursor: pointer"
+                />
+              </a>
+            </div>
+            <div class="qr-item">
+              <span class="qr-label">各種SNSリンク</span>
+              <a
+                href="https://qr.quel.jp/om/b0orrd"
+                class="qr-img"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="images/qr_sns.png"
+                  alt="SNS QR"
+                  style="cursor: pointer"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <span class="footer-logo">R-SEC</span>
+        <p>
+          &copy; 2026 R-SEC 東京理科大学 宇宙工学サークル. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // シンプルなスクロールアニメーションのトリガー
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".project-card, .contact-section")
+        .forEach((el) => {
+          el.style.opacity = "0";
+          observer.observe(el);
+        });
+    </script>
+  </body>
+</html>

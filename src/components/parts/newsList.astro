@@ -1,0 +1,50 @@
+---
+import newsData from "../../data/news.json";
+
+function datestr2jadate(dateStr:string){
+    const regex = /^\d{4}-\d{2}-\d{2}$/;//yyyy-mm-ddか
+    if(!regex.test(dateStr))return "";
+    const d=new Date(dateStr);
+    return `${d.getFullYear()}年${(d.getMonth()+1).toString()}月${d.getDay()}日`;
+}
+---
+<section class="news">
+    <div class="news__container">
+        <h2 class="news__title">NEWS</h2>
+        {newsData.map((value,index)=>(
+            <div class="news__section">
+                <div class="news__section__item">
+                    <span class="news__section__date">{datestr2jadate(value.created)}</span>
+                    <span class="news__section__content">
+                        {value.title}
+                    </span>
+                </div>
+            </div>
+        ))}
+    </div>
+</section>
+<style lang="scss">
+    .news{
+        padding:100px 0;
+        text-align:left;
+        &__container{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        &__section{
+            margin:16px 2ch;
+            &__date{
+                //display:inline-block;
+                overflow: hidden;
+                width:14ch;
+                margin-right:2ch;
+            }
+        }
+    }
+    @media (min-width:720px){
+        .news__container{
+            margin-left:24px;
+        }
+    }
+</style>

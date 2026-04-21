@@ -1,0 +1,51 @@
+---
+import { icon,library } from "@fortawesome/fontawesome-svg-core";
+import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { welcomeProjectURL } from "../../consts";
+library.add(faCalendarAlt);
+
+const calendaraltIcon=icon(faCalendarAlt);
+---
+
+<div class="info">
+    <div class="info__title">
+        <span set:html={calendaraltIcon.html} class="info__title__icon" />
+        新歓日程
+    </div>
+    <div class="info__schedule">
+        葛飾 4/2 @講義棟103<br />
+        野田 4/12 @講義棟305
+    </div>
+    <a href={welcomeProjectURL} target="_blank" class="info__link">もっと見る ></a>
+</div>
+<style lang="scss">
+    .info{
+        background: rgba(255,255,255, 0.05);
+        backdrop-filter: blur(8px);
+        padding: 24px;
+        border-radius: $radius;
+        border: 1px solid rgba(255,255,255, 0.1);
+        margin-bottom: 40px;
+        display: inline-block;
+        z-index:1;
+        &__title{
+            font-size: 0.9rem;
+            color: $accent-green;
+            margin-bottom: 8px;
+            font-weight: bold;
+            &__icon{
+                font-size:1.1rem;
+            }
+        }
+        &__schedule{
+            font-size:1.1rem;
+            font-family:$font-mono;
+        }
+        &__link{
+            font-size:0.8rem;
+            color:$accent-blue;
+            margin-top:8px;
+            &:hover{color:$accent-cyan;}
+        }
+    }
+</style>

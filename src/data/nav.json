@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Welcome Project",
+    "path": "https://drunkendragonjp.github.io/welcome_project/",
+    "outer": true
+  },
+  { "name": "Projects", "path": "/#projects" },
+  { "name": "Event", "path": "/#event" },
+  { "name": "Contact", "path": "/#contact" }
+]

@@ -30,7 +30,7 @@ const pageDescription = description || SITE_DESCRIPTION;
 //twitterCard設定
 const twitterCardType = ogpImageURL ? "summary_large_image" : "summary";
 
-const googleAnalyticsScriptURL = hasGoogleAnalytics
+/*const googleAnalyticsScriptURL = hasGoogleAnalytics
   ? `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
   : undefined;
 const googleAnalyticsInlineScript = hasGoogleAnalytics
@@ -40,7 +40,7 @@ function gtag() {
 }
 gtag("js", new Date());
 gtag("config", "${GA_MEASUREMENT_ID}");`
-  : undefined;
+  : undefined;*/
 ---
 
 <meta charset="UTF-8" />
@@ -78,11 +78,11 @@ gtag("config", "${GA_MEASUREMENT_ID}");`
 <meta name="twitter:description" content={pageDescription} />
 {ogpImageURL && <meta name="twitter:image" content={ogpImageURL.href} />}
 
-{
+<!--{
   hasGoogleAnalytics && (
     <>
       <script is:inline async src={googleAnalyticsScriptURL} />
       <script is:inline set:html={googleAnalyticsInlineScript} />
     </>
   )
-}
+}-->

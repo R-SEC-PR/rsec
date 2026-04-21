@@ -1,8 +1,39 @@
-@use "@fontsource/noto-sans-jp";
+/* フォント */
+$font-jp: "Noto Sans JP", sans-serif;
+$font-en: "Orbitron Variable", sans-serif;
+$font-mono: "Share Tech Mono", monospace;
 
-$font-default: "Noto Sans JP", sans-serif;
-$body: "Noto Sans JP", sans-serif;
-$theme-font: "Noto Sans JP", serif;
+/* テーマカラー */
+$yellow: #f5c400;
+$yellow-light: #ffd740;
+$yellow-dark: #c49b00;
 
-$black: #383838;
+/* black and white */
+$black: #0a0a0f;
 $white: #fff8f9;
+
+$dark: #111118;
+$dark2: #1a1a24;
+$dark3: #22222e;
+
+$gray: #3a3a4a;
+$gray-mid: #6b6b80;
+$gray-light: #9a9ab0;
+
+$white-dim: rgba($white, 0.85);
+$white-faint: rgba($white, 0.55);
+
+/* 新しいアクセントカラー */
+$accent-cyan: #00f2ff;
+$accent-green: #3dffb0;
+$accent-blue: #4a9eff;
+
+/* その他 */
+$radius: 12px;
+$radius-sm: 6px;
+$radius-lg: 20px;
+$shadow: 0 4px 24px rgba($black, 0.4);
+$shadow-lg: 0 8px 48px rgba($black, 0.6);
+$transition: 0.3s cubic-bezier(0.1, 0.1, 0.2, 1);
+
+$header-height: 68px;

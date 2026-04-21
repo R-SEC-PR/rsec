@@ -11,9 +11,15 @@ importers:
       '@astrojs/mdx':
         specifier: ^5.0.3
         version: 5.0.3(astro@6.1.2(rollup@4.60.1)(sass@1.98.0))
+      '@fontsource-variable/orbitron':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@fontsource/noto-sans-jp':
         specifier: ^5.2.9
         version: 5.2.9
+      '@fontsource/share-tech-mono':
+        specifier: ^5.2.7
+        version: 5.2.7
       '@fortawesome/fontawesome-svg-core':
         specifier: ^7.2.0
         version: 7.2.0
@@ -241,8 +247,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource-variable/orbitron@5.2.8':
+    resolution: {integrity: sha512-Jazvuj2cgBq663z1j/+JdwH2ztqQ8RaGhJgdHYphFbtfowiFaR74R8UgZl7x1skbXmUMWWH1jXfG7mrYFIYK0A==}
+
   '@fontsource/noto-sans-jp@5.2.9':
     resolution: {integrity: sha512-6yVGiofnrnbiJjU8ch4JGSs2HqyozxMvsVyVmFwOnDH3u//qQKLqmKM4n0lqN0637uaJNzUW9nIJqbbMgHVQzw==}
+
+  '@fontsource/share-tech-mono@5.2.7':
+    resolution: {integrity: sha512-1JBJ6CU9u5av8aFEUOGOJkq60/IEVVOZDCmiU8X3i0skk0Pp69GngDwlBUHaTZa4G6pbF1UDrC+Fm7XSckW6TQ==}
 
   '@fortawesome/fontawesome-common-types@7.2.0':
     resolution: {integrity: sha512-IpR0bER9FY25p+e7BmFH25MZKEwFHTfRAfhOyJubgiDnoJNsSvJ7nigLraHtp4VOG/cy8D7uiV0dLkHOne5Fhw==}
@@ -1874,7 +1886,11 @@ snapshots:
   '@esbuild/win32-x64@0.27.4':
     optional: true
 
+  '@fontsource-variable/orbitron@5.2.8': {}
+
   '@fontsource/noto-sans-jp@5.2.9': {}
+
+  '@fontsource/share-tech-mono@5.2.7': {}
 
   '@fortawesome/fontawesome-common-types@7.2.0': {}
 

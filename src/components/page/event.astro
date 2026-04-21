@@ -1,0 +1,95 @@
+<section id="event" class="section">
+    <div class="container">
+    <div class="event-section">
+        <h2 class="event-title">新歓日程</h2>
+        <div class="event-schedule">
+        <div class="event-item">
+            <div class="event-location">葛飾キャンパス</div>
+            <div class="event-date">4月2日 (木) @講義棟103</div>
+        </div>
+        <div class="event-item">
+            <div class="event-location">野田キャンパス</div>
+            <div class="event-date">4月12日 (日) @講義棟305</div>
+        </div>
+        </div>
+        <div
+        class="hero-actions"
+        style="margin-top: 20px; text-align: center"
+        >
+        <a href="#contact" class="btn btn-outline">新歓チャットに参加</a>
+        </div>
+    </div>
+    </div>
+</section>
+<style lang="scss">
+.event-section {
+    background: linear-gradient(
+        135deg,
+        rgba(0, 242, 255, 0.05) 0%,
+        rgba(61, 255, 176, 0.05) 100%
+    );
+    border-radius: $radius-lg;
+    padding: 60px 40px;
+    text-align: center;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.event-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: $white;
+}
+
+.event-schedule {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .event-schedule {
+        grid-template-columns: 1fr;
+    }
+}
+
+.event-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius:$radius;
+    border: 1px solid rgba(0, 242, 255, 0.3);
+}
+
+.event-location {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $accent-cyan;
+    margin-bottom: 8px;
+}
+
+.event-date {
+    color: $gray-light;
+    font-size: 0.95rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: $radius;
+    font-weight: 700;
+    transition: $transition;
+    cursor: pointer;
+}
+
+.btn-outline {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: $white;
+    &:hover{
+        color:$yellow;
+    }
+}
+</style>

@@ -1,9 +1,149 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/parts/button.astro';
+import { Image } from 'astro:assets';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import main_visual from "../assets/main_visual.png";
+import ShinkanInfo from '../components/parts/shinkanInfo.astro';
+import NewsList from '../components/parts/newsList.astro';
+import Projects from '../components/page/projects.astro';
+import Contact from '../components/page/contact.astro';
+import Event from '../components/page/event.astro';
 ---
 
-<Layout>
+<Layout title="R-SEC" description="R-SEC">
+    <section class="hero">
+        <div class="hero__bg">
+            <Image src={main_visual} alt="R-SEC Main Visual" />
+        </div>
+        <div class="hero__overlay" />
+        <div class="hero__content">
+            <div class="hero__content__badge animate">RIKADAI SPACE ENGINEERING CIRCLE</div>
+            <h1 class="hero__content__title animate delay-1">R-SEC</h1>
+            <p class="hero__content__subtitle animate delay-2">
+            理科大一、宇宙に近いサークル
+            </p>
+
+            <div class="hero__info animate delay-2">
+                <ShinkanInfo />
+            </div>
+
+            <div class="hero-actions animate delay-3">
+                <Button value="プロジェクトを見る" path="#projects" />
+            </div>
+
+        </div>
+    </section>
+    <NewsList />
+    <Event />
+    <Projects />
+    <Contact />
 </Layout>
+<script>
+const setupObserver = () => {
+    const observerOptions = {
+      threshold: 0.15, // 要素の15%が見えたら実行
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // 画面内に入ったら .animate クラスを追加
+          entry.target.classList.add("animate");
+          // 一度動いたら監視を解除（1回きりの演出）
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // .floating クラスを持つすべての要素を監視
+    const targets = document.querySelectorAll(".floating");
+    targets.forEach((el) => observer.observe(el));
+  };
+  document.addEventListener("DOMContentLoaded", setupObserver);
+  //document.addEventListener("astro:page-load", setupObserver);
+</script>
+<style lang="scss">
+    .hero{
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 70px;
+        overflow: hidden;
+        &__bg{
+            position:absolute;
+            inset:0;
+            z-index:-1;
+            &>*{
+                width:100%;
+                height:100%;
+                object-fit: cover;
+                filter: brightness(0.4);
+            }
+        }
+        &__content{
+            position:relative;
+            z-index:2;
+            max-width:900px;
+            &__badge{
+                display: inline-block;
+                font-family: $font-en;
+                font-size: 0.8rem;
+                letter-spacing: 0.2em;
+                color: $accent-cyan;
+                border: 1px solid $accent-cyan;
+                padding: 6px 20px;
+                border-radius: 100px;
+                margin-bottom: 24px;
+                background: rgba(0, 242, 255, 0.2);
+            }
+            &__title{
+                font-family: $font-en;
+                font-size: clamp(3rem, 10vw, 6rem);
+                font-weight: 900;
+                line-height: 1;
+                margin-bottom: 20px;
+                letter-spacing: -0.02em;
+            }
+            &__subtitle{
+                font-size: clamp(1.2rem, 3vw, 1.8rem);
+                font-weight: 500;
+                margin-bottom: 40px;
+                color: $white-dim;
+            }
+        }
+        &__overlay{
+            position:absolute;
+            inset:0;background: radial-gradient(
+                circle at center,
+                transparent,
+                $black
+            );
+            z-index:1;
+        }
+    }
+    @keyframes floatUp{
+        from{
+            transform:translateY(30px);
+            opacity:0;
+        }
+        to{
+            transform:translateY(0);
+            opacity:1;
+        }
+    }
+    .animate{
+        animation: floatUp 0.8s ease both;
+    }
+    .delay-1 {
+        animation-delay: 0.2s;
+    }
+    .delay-2 {
+        animation-delay: 0.4s;
+    }
+    .delay-3 {
+        animation-delay: 0.6s;
+    }
+</style>

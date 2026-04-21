@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import logoImg from "../../assets/r-sec_logo.jpg";
+import HeaderMenu from "../parts/headerMenu.astro";
+import HeaderAccordion from "../parts/headerAccordion.astro";
+
+import navData from "../../data/nav.json";
+
+---
+<header class="header">
+  <div class="header__logo">
+    <a href="/" class="cover_link">
+      <Image src={logoImg} alt="r-sec logo" width={256} height={256} class="header__logo__icon" />
+     <p class="header__logo__text">R-SEC</p>
+    </a>
+  </div>
+  <div class="header__nav">
+    <div class="PC">
+      <HeaderMenu navData={navData} />
+    </div>
+    <div class="SP">
+      <HeaderAccordion navData={navData} />
+    </div>
+  </div>
+</header>
+<style lang="scss">
+  .header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:$header-height;
+    z-index:9999;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0 0 24px;
+    background: rgba(10,10,15, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(white, 0.05);
+    &__logo{
+      height:$header-height;
+      &>.cover_link{
+        display:flex;
+        flex-wrap:nowrap;
+        align-items: center;
+        gap:8px;
+      }
+      &__icon{
+        width: 40px;
+        clip-path:circle(50%);
+      }
+      &__text{
+        display:inline-block;
+        font-family: $font-en;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: $yellow;
+        letter-spacing: 0.1em;
+        user-select: none;
+      }
+    }
+    @media (min-width:720px){
+      &__logo{margin-left:16px;}
+    }
+  }
+  </style>

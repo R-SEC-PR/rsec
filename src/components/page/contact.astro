@@ -1,0 +1,121 @@
+---
+import qr_line from "../../assets/qrs/qr_line.jpg";
+import qr_sns from "../../assets/qrs/qr_sns.png";
+import { Image } from "astro:assets";
+---
+<section id="contact" class="section">
+    <div class="container">
+    <div class="contact-section">
+        <div class="contact-text">
+        <h2>JOIN US!</h2>
+        <p>
+            新歓期間はモデルロケット製作や電子工作を体験できます！興味があれば学年・学部問わず大歓迎！日程は各種SNSやオープンチャットでチェック！
+        </p>
+        <p
+            style="
+            font-size: 0.85rem;
+            color: $gray-light);
+            margin-top: 20px;
+            "
+        >
+            QR画像をタップしてリンク先にジャンプできます
+        </p>
+        </div>
+        <div class="qr-grid">
+        <div class="qr-item">
+            <span class="qr-label">新歓オープンチャット</span>
+            <a
+            href="https://line.me/ti/g2/s53-cMOZ_WM-weZjBFGe9BK26XzErD270IH3ZA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+            class="qr-img"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            <Image
+                src={qr_line}
+                alt="LINE_QR"
+                style="cursor: pointer"
+                format="webp"
+                quality={70}
+            />
+            </a>
+        </div>
+        <div class="qr-item">
+            <span class="qr-label">各種SNSリンク</span>
+            <a
+            href="https://qr.quel.jp/om/b0orrd"
+            class="qr-img"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+                <Image
+                    src={qr_sns}
+                    alt="LINE_SNS"
+                    style="cursor: pointer"
+                    format="webp"
+                    quality={70}
+                />
+            </a>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>  
+<style lang="scss">
+.contact-section {
+    background: $dark;
+    border-radius: $radius-lg;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .contact-section {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+    }
+}
+
+.contact-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-text p {
+    color: $gray-light;
+    margin-bottom: 30px;
+}
+
+.qr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.qr-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 24px;
+    border-radius: $radius;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.qr-img {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 16px;
+    background: white;
+    padding: 8px;
+    border-radius: $radius-sm;
+}
+
+.qr-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+</style>
